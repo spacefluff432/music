@@ -1,0 +1,84 @@
+<head>
+   <meta charset="UTF-8">
+   <title>Harrison Smith</title>
+   <link rel="icon" href="assets/images/icon.png">
+   <script defer src="assets/scripts/index.js"></script>
+   <script defer src="assets/scripts/background.js"></script>
+   <script src="assets/scripts/css.js" href="assets/styles/index.css"></script>
+   <meta name="author" content="Harrison Smith">
+   <meta http-equiv="content-type" content="text/html">
+   <meta name="keywords" content="hbms,harrix,hbms432,harrix432,harrison smith,music,music producer,music maker,music artist,edm,trance,techno,electro,chiptune,melodic">
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+   <meta name="description" content="I'm a low-quality music producer, unprofessional JS developer, and terrible rocket league player.">
+</head>
+<body>
+   <canvas id="background"></canvas>
+   <grid id="foreground" type="rows">
+      <block id="top" size="90px" class="center">
+         <text>Harrison Smith</text>
+      </block>
+      <grid id="nav" size="40px" type="columns">
+         <fill></fill>
+         <block active size="80px" name="home" class="nav button">HOME</block>
+         <block size="80px"><a href="https://www.minds.com/hbms432" target="_blank">MINDS</a></block>
+         <block size="80px"><a href="https://www.youtube.com/channel/UCQNVH3FXo5voHP9uCXXygUg" target="_blank">YOUTUBE</a></block>
+         <block size="80px"><a href="https://hbms.me/pages" target="_blank">PAGES</a></block>
+         <fill></fill>
+      </grid>
+      <grid active id="content" type="rows" name="home" class="page">
+         <grid id="interface" type="rows">
+            <fill class="interface-spacer" size="25px"></fill>
+            <block id="cover-flow-wrap">
+               <grid id="cover-flow" type="columns">
+                  <fill></fill>
+                  <block id="flow-deep-left" class="flow-item"size="25px"></block>
+                  <block id="flow-far-left" class="flow-item" size="150px"></block>
+                  <block id="flow-left" class="flow-item" size="150px"></block>
+                  <block id="flow-center" class="flow-item" size="150px">
+                     <grid id="hover-list" type="rows"></block>
+                  </div>
+                  <block id="flow-right" class="flow-item" size="150px"></block>
+                  <block id="flow-far-right" class="flow-item" size="150px"></block>
+                  <block id="flow-deep-right" class="flow-item" size="25px"></block>
+                  <fill></fill>
+               </grid>
+            </block>
+            <block id="track-title-wrap" size="70px"><text id="track-title"></text></block>
+            <block id="track-album-wrap"size="30px"><text id="track-album"></text></block>
+            <fill class="interface-spacer" size="25px"></fill>
+         </grid>
+         <grid id="footer" size="50px" type="columns">
+            <fill size="10px"></fill>
+            <block id="ctrl-prev" class="icon" size="45px">skip_previous</block>
+            <block id="ctrl-play" class="icon" size="45px">play_arrow</block>
+            <block id="ctrl-next" class="icon" size="45px">skip_next</block>
+            <block id="current" size="60px">00:00</block>
+            <block id="rail">
+               <block id="fill">
+                  <block id="knob"></block>
+               </block>
+               <block id="buff"></block>
+            </block>
+            <block id="total" size="60px">00:00</block>
+            <block id="ctrl-volume" class="icon" size="45px">volume_up</block>
+            <block id="ctrl-repeat" class="icon" size="45px">repeat</block>
+            <block id="ctrl-shuffle" class="icon" size="45px">shuffle</block>
+            <fill size="10px"></fill>
+         </grid>
+      </grid>
+      <video hidden=""></video>
+      <block id="preload" hidden=""></block>
+      <block id="templates" hidden="">
+         <template id="list-header">
+            <block class="list-header"><text>${M.group.title}</text></block>
+         </template>
+         <template id="list-item">
+            <grid id="list-item-${key}" class="list-item button" type="columns" size="20.16px">
+               <block size="20.16px" class="track-number"><text>${index + 1}.</text></block>
+               <block class="track-title"><text>${member.title}</text></block>
+               <!-- <block size="100px" class="track-date"><text>${member.date || ''}</text></block> -->
+            </grid>
+         </template>
+      </block>
+   </block>
+</body>

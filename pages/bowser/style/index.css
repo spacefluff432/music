@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Material+Icons+Sharp|Inconsolata|Teko');
+
+:not(input)::selection {
+   background-color: hsla(0, 0%, 0%, 0);
+}
+
+icon {
+   display: inline-block;
+   white-space: nowrap;
+   font-family: 'Material Icons Sharp';
+}
+
+body {
+   margin: 0;
+}
+
+grid {
+   display: grid;
+}
+
+block {
+   margin: auto;
+   display: block;
+}
+
+text {
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+
+body {
+   font-family: 'Teko';
+   background-color: #0d0d0d;
+}
+
+#wrapper {
+   width: 100%;
+   height: 100%;
+}
+
+#frame {
+   -webkit-app-region: drag;
+}
+
+#title {
+   color: #7f7f7f;
+   font-size: 20px;
+   margin-top: 0;
+   margin-left: 7.5px;
+   overflow-y: hidden;
+}
+
+#frame > icon {
+   color: #7f7f7f;
+   cursor: pointer;
+   padding: 6.25px 8.75px;
+   overflow: hidden;
+   font-size: 12.5px;
+   -webkit-app-region: no-drag;
+}
+
+#frame > icon:hover {
+   color: #ffffff;
+}
+
+#minimize:hover {
+   background-color: #3f3f3f;
+}
+
+#minimize:active {
+   background-color: #5f5f5f;
+}
+
+#close:hover {
+   background-color: #ff3f3f;
+}
+
+#close:active {
+   background-color: #ff5f5f;
+}
+
+#header {
+   background-color: #131313;
+}
+
+#address {
+   color: #afafaf;
+   border: 0;
+   height: 35px;
+   font-size: 22.5px;
+   margin-top: 7.5px;
+   margin-left: 5px;
+   font-family: 'Inconsolata';
+   padding-left: 10px;
+   background-color: #1b1b1b;
+}
+
+#address:focus {
+   color: #efefef;
+   outline: none;
+}
+
+#browser {
+   width: 100%;
+   height: 100%;
+   border: 0;
+}
+
+#header > icon {
+   color: #afafaf;
+   margin: 7.5px 5px;
+   padding: 6.25px 6.25px;
+   font-size: 22.5px;
+   background-color: #1b1b1b;
+}
+
+#header > icon.enabled {
+   cursor: pointer;
+}
+
+#header > icon.enabled:hover {
+   background-color: #2b2b2b;
+}
+
+#header > icon.enabled:active {
+   color: #efefef;
+}

@@ -1,0 +1,24 @@
+<head>
+   <title>Bowser</title>
+   <link rel="stylesheet" href="./style/index.css">
+   <script defer type="module" src="./script/index.js"></script>
+</head>
+<body>
+   <grid id="wrapper" type="rows">
+      <!--
+      <grid id="frame" type="columns" size="25px">
+         <block id="title">Bowser Browser</block>
+         <icon id="minimize" size="30px">remove</icon>
+         <icon id="close" size="30px">close</icon>
+      </grid>
+      -->
+      <grid id="header" type="columns" size="50px">
+         <block size="5px"></block>
+         <icon id="back" size="45px">chevron_left</icon>
+         <icon id="forward" size="45px">chevron_right</icon>
+         <input id="address" placeholder="Search or enter address...">
+         <block size="10px"></block>
+      </grid>
+      <iframe id="browser"></iframe>
+   </grid>
+</body>

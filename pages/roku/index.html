@@ -1,0 +1,205 @@
+<head>
+
+	<title>Roku Remote</title>
+
+   <link rel="icon" href="favicon.png">
+
+   <style>
+
+      @import url('https://fonts.googleapis.com/css?family=Carter+One&display=swap');
+
+      @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+      body {
+
+         background: #1f1f1f;
+
+         margin: 0px;
+
+      }
+
+      input, body {
+
+         font-family: 'Carter One';
+
+      }
+
+      *::selection {
+
+         background-color: #00000000;
+
+      }
+
+      #wrapper {
+
+         display: grid;
+
+         grid-template-rows: 50px 1fr 50px;
+
+         height: 100%;
+
+      }
+
+      #header, #footer {
+
+         background-color: #2f2f2f;
+
+         box-shadow: 0 0 2px 1px #1f1f1f;
+
+      }
+
+      #header {
+
+         display: grid;
+
+         grid-template-columns: 50px 1fr 260px;
+
+      }
+
+      #icon {
+
+         height: 40px;
+
+         margin: 5px;
+
+         background-image: url('favicon.png');
+
+         background-size: cover;
+
+      }
+
+      #title, #author, #keyboard, #device_label, #device_value {
+
+         display: flex;
+
+         align-items: center;
+
+         color: #ffffff;
+
+         justify-content: center;
+
+      }
+
+      #title {
+
+         justify-content: left;
+
+      }
+
+      #title, #device_label, #device_value {
+
+         font-size: 30px;
+
+      }
+
+      #device_back, #device_forward {
+
+         font-size: 40px;
+
+         padding: 5px 0;
+
+      }
+
+      #device_back:hover, #device_forward:hover {
+
+         color: #844edb;
+
+         cursor: pointer;
+
+      }
+
+      #device_back:active, #device_forward:active {
+
+         color: #4c2c80;
+
+      }
+
+      #footer {
+
+         display: grid;
+
+         grid-template-columns: 150px 1fr 150px;
+
+      }
+
+      #keyboard {
+
+         width: auto;
+
+         margin: 5px;
+
+         outline: none !important;
+
+         color: #000000;
+
+         padding-left: 5px;
+
+         border: 0 !important;
+
+      }
+
+      #device {
+
+         display: grid;
+
+         grid-template-columns: 40px 140px 40px 40px;
+
+      }
+
+      #device_back, #device_forward {
+
+         color: #ffffff;
+
+      }
+
+   </style>
+
+</head>
+
+<body>
+
+   <div id="wrapper">
+
+      <div id="header">
+
+         <div id="icon"></div>
+
+         <div id="title">Roku Remote</div>
+
+         <div id="device">
+
+            <div id="device_back" class="material-icons">chevron_left</div>
+
+            <div id="device_label">Device #</div>
+
+            <div id="device_value">01</div>
+
+            <div id="device_forward" class="material-icons">chevron_right</div>
+
+         </div>
+
+      </div>
+
+      <div id="content">
+
+      </div>
+
+      <div id="footer">
+
+         <div></div>
+
+         <input id="keyboard" placeholder="Roku Keyboard Input">
+
+         <div id="author">
+
+            Author:<br>&lt;hbms432&gt;
+
+         </div>
+
+      </div>
+
+   </div>
+
+	<script src="script.js"></script>
+
+</body>
