@@ -1,0 +1,31 @@
+[speed:20|background:cv-undyne-upstairs_hallway|character:undyne|emotion:mildlyannoyed]
+* ALPHYS!!
+* What's taking you so long!?
+
+[character:alphys|emotion:nervous]
+* I...
+
+[character:alphys|emotion:nervousconfidence]
+* I'll be right there!
+
+[character:undyne|emotion:epic]
+* Better be!
+
+[emotion:epiccer]
+* I'd hate to see you show up late for your first public appearance!
+
+[background:none|character:narrator]
+As Alphys grabbed her belongings, a sense of doubt washed over her.
+   
+[background:cv-undyne-bedroom|character:alphys|emotion:unsure]
+* (Would a monster's opinion really be valued over a human's?)
+* (Is it even possible for me to earn the respect of the scientific community?)
+
+[speed:10|emotion:thinking]
+* (...)
+
+[speed:20|emotion:neutral]
+* (I just have to go in confident, like Undyne showed me.)
+
+[emotion:hopeful]
+* (Then everything will work out.)

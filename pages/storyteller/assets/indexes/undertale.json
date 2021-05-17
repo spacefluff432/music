@@ -1,0 +1,62 @@
+{
+   "backgrounds": {
+      "cv-undyne-upstairs_hallway": "assets/images/backgrounds/cv-undyne-upstairs_hallway.png",
+      "cv-undyne-bedroom": "assets/images/backgrounds/cv-undyne-bedroom.png",
+      "none": "assets/images/backgrounds/none.png"
+   },
+   "characters": {
+      "default": {
+         "emotions": {
+            "default": ""
+         },
+         "fonts": {
+            "default": ""
+         },
+         "voices": {
+            "default": ""
+         }
+      },
+      "narrator": {
+         "emotions": {
+            "default": "assets/images/faces/narrator.png"
+         },
+         "fonts": {
+            "default": "Determination"
+         },
+         "voices": {
+            "default": "assets/sounds/voices/SND_TXT1.wav"
+         }
+      },
+      "alphys": {
+         "emotions": {
+            "default": "assets/images/faces/alphys/neutral.png",
+            "nervous": "assets/images/faces/alphys/nervous.png",
+            "nervousconfidence": "assets/images/faces/alphys/nervousconfidence.png",
+            "unsure": "assets/images/faces/alphys/unsure.png",
+            "thinking": "assets/images/faces/alphys/thinking.png",
+            "neutral": "assets/images/faces/alphys/neutral.png",
+            "hopeful": "assets/images/faces/alphys/hopeful.png"
+         },
+         "fonts": {
+            "default": "Determination"
+         },
+         "voices": {
+            "default": "assets/sounds/voices/snd_txtal.wav"
+         }
+      },
+      "undyne": {
+         "emotions": {
+            "default": "assets/images/faces/undyne/epic.png",
+            "mildlyannoyed": "assets/images/faces/undyne/mildlyannoyed.png",
+            "epic": "assets/images/faces/undyne/epic.png",
+            "epiccer": "assets/images/faces/undyne/epiccer.png"
+         },
+         "fonts": {
+            "default": "Determination"
+         },
+         "voices": {
+            "default": "assets/sounds/voices/snd_txtund.wav"
+         }
+      }
+   }
+}

@@ -1,0 +1,16 @@
+<head>
+   <title>Surface Tension</title>
+   <link rel="icon" href="assets/images/favicon.png">
+   <link rel="stylesheet" href="assets/styles/index.css">
+   <meta http-equiv="Cache-Control" CONTENT="no-cache">
+   <script src="data:text/javascript,setInterval(()=>{document.querySelectorAll('grid').forEach(a=>{a.setAttribute('style',`grid-template-${a.getAttribute('type')||'rows'}: ${[...a.children].map(a=>null===a.offsetParent?'':a.getAttribute('size')||'1fr').join(' ')||'1fr'}`)})},50);"></script>
+</head>
+<body>
+   <grid type="columns" id="story">
+      <block id="story-face" size="140px"></block>
+      <block id="story-text">
+         <text></text>
+      </block>
+   </grid>
+   <script type="module" src="assets/scripts/index.js"></script>
+</body>

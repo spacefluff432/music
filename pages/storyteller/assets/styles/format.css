@@ -1,0 +1,62 @@
+@font-face {
+   src: url('../fonts/crypt-of-tomorrow.woff') format('woff');
+   font-family: 'Crypt Of Tomorrow';
+}
+
+@font-face {
+   src: url('../fonts/diary-of-an-8-bit-mage.woff') format('woff');
+   font-family: 'Diary Of An 8-Bit Mage';
+}
+
+@font-face {
+   src: url('../fonts/determination.woff') format('woff');
+   font-family: 'Determination';
+}
+
+@font-face {
+   src: url('../fonts/comic-sans.woff') format('woff');
+   font-family: 'Sans';
+}
+
+@font-face {
+   src: url('../fonts/papyrus.woff') format('woff');
+   font-family: 'Papyrus';
+}
+
+@font-face {
+   src: url('../fonts/wingdings.woff') format('woff');
+   font-family: 'Gaster';
+}
+
+@font-face {
+   src: url('../fonts/times-new-roman.woff') format('woff');
+   font-family: 'Roman';
+}
+
+sans {
+   font-family: 'Sans';
+}
+
+papyrus {
+   font-family: 'Papyrus';
+}
+
+gaster {
+   font-family: 'Gaster';
+}
+
+roman {
+   font-family: 'Roman';
+}
+
+frisk {
+   color: #ffff00ff;
+}
+
+chara {
+   color: #ff0000ff;
+}
+
+mason {
+   color: #00ffffff;
+}
