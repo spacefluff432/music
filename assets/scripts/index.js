@@ -199,7 +199,7 @@ const M = {
       value ? O.player.paused && O.player.play().catch(() => (M.resume = false)) : O.player.paused || O.player.pause();
    },
    anim: false,
-   content: 'assets/content/',
+   content: 'http://srv.hbms.me:3030/music/',
    flow: (direction) => {
       let array = [ ...N.data.index, ...N.data.index, ...N.data.index ];
       let offset = 3;
