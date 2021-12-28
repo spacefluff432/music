@@ -1,0 +1,8 @@
+{
+   "dependencies": {
+      "typescript": "4.5.0-dev.20210910"
+   },
+   "scripts": {
+      "tsc": "npx tsc --watch"
+   }
+}

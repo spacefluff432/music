@@ -1,5 +1,5 @@
 // dollar utility (needs reworked)
-const $ = (selector) => {
+const $ = selector => {
    let targets = null;
    if (typeof selector === 'string') {
       targets = [ ...document.querySelectorAll(selector) ];
@@ -8,14 +8,14 @@ const $ = (selector) => {
    } else {
       targets = [ selector ];
    }
-   targets.on = (handlers) => {
+   targets.on = handlers => {
       for (let target of targets) {
          for (let handler in handlers) {
             target.addEventListener(handler, handlers[handler]);
          }
       }
    };
-   targets.css = (styles) => {
+   targets.css = styles => {
       for (let target of targets) {
          for (let style in styles) {
             target.style[style] = styles[style];
@@ -42,18 +42,18 @@ $.util = {
       }
       return string;
    },
-   nv: (array) => {
+   nv: array => {
       let nav = {
          array: array,
          index: 0,
-         push: (diff) => {
+         push: diff => {
             nav.index = nav.calc(diff);
             return nav.pull(0);
          },
-         pull: (diff) => {
+         pull: diff => {
             return nav.array[nav.calc(diff)];
          },
-         calc: (diff) => {
+         calc: diff => {
             let index = nav.index;
             if (diff < 0) {
                while (diff < 0) {
@@ -104,7 +104,7 @@ $.util = {
 setInterval(() => {
    for (let grid of $('grid')) {
       let size = $(grid.children)
-         .map((child) => {
+         .map(child => {
             let content = {};
             try {
                content = JSON.parse(JSON.parse(getComputedStyle(child, ':before').content));
@@ -199,8 +199,8 @@ const M = {
       value ? O.player.paused && O.player.play().catch(() => (M.resume = false)) : O.player.paused || O.player.pause();
    },
    anim: false,
-   content: 'http://srv.hbms.me:3030/music/',
-   flow: (direction) => {
+   content: 'https://srv.hbms.me:3030/music/',
+   flow: direction => {
       let array = [ ...N.data.index, ...N.data.index, ...N.data.index ];
       let offset = 3;
       let current = N.data.index.length + N.serial[0];
@@ -235,7 +235,7 @@ const M = {
          O.list.innerHTML += eval('`' + O.item.innerHTML + '`');
       });
       for (let item of [ ...document.querySelectorAll('.list-item') ]) {
-         item.addEventListener('click', (event) => {
+         item.addEventListener('click', event => {
             const key = event.currentTarget.id.split('-').slice(2).join('-');
             N.state = `${N.state.split('/')[0]}/${key}`;
             M.refresh();
@@ -298,13 +298,13 @@ const M = {
 // data navigator
 const N = {
    default: {},
-   generate: (shuffle) => {
+   generate: shuffle => {
       let state;
       if (M.ready) state = N.state;
       N.data = JSON.parse(JSON.stringify(N.default));
       if (shuffle) {
          N.data.index.sort(() => Math.random() < 0.5);
-         Object.values(N.data.groups).forEach((group) => group.members.sort(() => Math.random() < 0.5));
+         Object.values(N.data.groups).forEach(group => group.members.sort(() => Math.random() < 0.5));
       }
       if (M.ready) N.state = state;
    },
@@ -369,7 +369,7 @@ const O = {
 
 // player controller
 const P = {
-   play: (state) => {
+   play: state => {
       if (!M.ready) return;
       M.active = state === undefined ? !M.active : state;
       if (M.active) {
@@ -387,7 +387,7 @@ const P = {
          O.play.style.animationName = 'none';
       }
    },
-   repeat: (state) => {
+   repeat: state => {
       M.repeat = state === undefined ? { none: 'group', group: 'member', member: 'none' }[M.repeat] : state;
       switch (M.repeat) {
          case 'none':
@@ -407,7 +407,7 @@ const P = {
             break;
       }
    },
-   seek: (state) => {
+   seek: state => {
       M.seek = state === undefined ? !M.seek : state;
       if (M.seek) {
          if (!M.volume && M.active) {
@@ -422,7 +422,7 @@ const P = {
          }
       }
    },
-   shuffle: (state) => {
+   shuffle: state => {
       M.shuffle = state === undefined ? !M.shuffle : state;
       if (M.shuffle) O.shuffle.setAttribute('active', '');
       else O.shuffle.removeAttribute('active');
@@ -430,7 +430,7 @@ const P = {
       M.flow();
       M.refresh();
    },
-   volume: (state) => {
+   volume: state => {
       M.volume = state === undefined ? !M.volume : state;
       if (M.volume) {
          O.volume.setAttribute('active', '');
@@ -442,22 +442,24 @@ const P = {
    }
 };
 
-fetch(M.content + 'index.json').then((data) => data.json()).then((data) => {
-   N.default = data;
-   N.serial[0] = data.index.length - 1;
-   N.generate();
-   const params = new URLSearchParams(location.search);
-   if (params.has('state')) {
-      N.state = params.get('state');
-      M.resume = true;
-   } else if (params.has('album') && params.has('track')) {
-      N.serial[0] = Number(params.get('album')) - 1;
-      N.serial[1] = Number(params.get('track')) - 1;
-      M.resume = true;
-   }
-   M.flow();
-   M.refresh();
-});
+fetch(M.content + 'index.json')
+   .then(data => data.json())
+   .then(data => {
+      N.default = data;
+      N.serial[0] = data.index.length - 1;
+      N.generate();
+      const params = new URLSearchParams(location.search);
+      if (params.has('state')) {
+         N.state = params.get('state');
+         M.resume = true;
+      } else if (params.has('album') && params.has('track')) {
+         N.serial[0] = Number(params.get('album')) - 1;
+         N.serial[1] = Number(params.get('track')) - 1;
+         M.resume = true;
+      }
+      M.flow();
+      M.refresh();
+   });
 
 // debug
 window.L = L;
@@ -477,7 +479,7 @@ $('#ctrl-shuffle').on({ click: () => P.shuffle() });
 
 // scrub triggers
 $('#rail').on({
-   mousedown: (e) => (P.seek(true), L[0](e)),
+   mousedown: e => (P.seek(true), L[0](e)),
    mouseenter: () => O.fill.setAttribute('class', 'hover'),
    mouseleave: () => M.seek && O.fill.removeAttribute('class')
 });
@@ -565,7 +567,7 @@ window.addEventListener('scroll', () => {
 
 // pagination (yeeto peeto)
 $('.nav').on({
-   click: (event) => {
+   click: event => {
       const previous = $('.nav[active]')[0];
       const next = event.currentTarget;
       if (previous !== next) {

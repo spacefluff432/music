@@ -1,0 +1,13 @@
+{
+   "compilerOptions": {
+      "lib": [
+         "DOM",
+         "ESNext"
+      ],
+      "outDir": "./js",
+      "rootDir": "./ts",
+      "sourceMap": true,
+      "strict": true,
+      "target": "ES2020"
+   }
+}
