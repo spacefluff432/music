@@ -442,7 +442,7 @@ const P = {
    }
 };
 
-fetch(M.content + 'index.json')
+fetch('index.json')
    .then(data => data.json())
    .then(data => {
       N.default = data;
