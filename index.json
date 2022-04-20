@@ -755,11 +755,6 @@
          "title": "The Force (Preview)",
          "type": "audio"
       },
-      "the-thing": {
-         "source": "the-thing.mp3",
-         "title": "The Thing",
-         "type": "audio"
-      },
       "the-truth": {
          "source": "the-truth.mp3",
          "title": "The Truth",
@@ -1140,13 +1135,13 @@
       "hummingbird": {
          "cover": "hummingbird.jpg",
          "members": [
+            "the-beginning",
             "ancient-tales",
-            "hummingbird",
             "rhythm",
             "tangerine-skies",
             "temporal-shift-ii",
-            "the-thing",
-            "transdimensional-ii"
+            "transdimensional-ii",
+            "the-end"
          ],
          "title": "Hummingbird",
          "type": "collection"
